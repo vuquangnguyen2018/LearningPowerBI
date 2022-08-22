@@ -1,3 +1,0 @@
-# OPERATOR
-String: concatenation string : & 
-  CombinedName = DimProductCategory[ProductCategoryKey] & "  " & DimProductCategory[EnglishProductCategoryName] & "  " &   DimProductCategory[FrenchProductCategoryName]
