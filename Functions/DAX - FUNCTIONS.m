@@ -22,3 +22,7 @@ String: concatenation string : &
                                 "Outside US")
     #IF ERROR (Nếu sai)
     ERROR = IFERROR(FactInternetSales[TotalProductCost]/(FactInternetSales[OrderQuantity]-1),BLANK())
+
+# SIGN FUNCTION 
+CompareWith4.99 = SWITCH(SIGN(FactInternetSales(SalesAmount)-4.99),1, "More", 0, "Same", -1, "Less")
+
