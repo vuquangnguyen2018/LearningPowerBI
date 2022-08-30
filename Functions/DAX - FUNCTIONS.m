@@ -26,3 +26,18 @@ String: concatenation string : &
 # SIGN FUNCTION 
 CompareWith4.99 = SWITCH(SIGN(FactInternetSales(SalesAmount)-4.99),1, "More", 0, "Same", -1, "Less")
 
+# TEXT
+* Search : Tìm kiếm 
+BikeLocation=SEARCH("bike",DimProductCategory[EnglishProductCategoryName],1,BLANK())
+
+* SUBSTITUE: Thay the
+Moped = SUBSTITUE(DimProductSubCategory[EnglishProductCategoryName],"Bike","Moped")
+
+
+* EXTRACT
+ExtractedText = RIGHT(FactInternetSales[SalesOrderNumber],5)
+ExtractedText = MID(FactInternetSales[SalesOrderNumber],LEN(SalesOrderNumber)-5+1,LEN(SalesOrderNumber)-2)
+ExtractedText = SUBSTITUE(FactInternetSales[SalesOrderNumber],"SO","Sale Order: ")
+ExtractedText = REPLACE(FactInternetSales[SalesOrderNumber],1,2,"Sale Order: ")
+
+
