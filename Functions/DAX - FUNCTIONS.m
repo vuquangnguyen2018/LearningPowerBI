@@ -44,3 +44,9 @@ ExtractedText = REPLACE(FactInternetSales[SalesOrderNumber],1,2,"Sale Order: ")
 * LOOKVALUE: Tìm kiếm và trả giá trị 
 
 Custom = LOOKUPVALUE(FactInternetSales[SalesTerritoryKey],FactInternetSales[SalesOrderNumber],"SO51900")
+
+* RELATED: Tham khảo
+CategorySubcategory = RELATED(DimProductCategory[EnglishProductCategoryName]) & " " & RELATED(DimProductSubcategory[EnglishProductSubcategoryName])
+
+* RELATEDTABLE 
+StandardCost = SUMX(RELATEDTABLE(FactInternetSales),FactInternetSales[ProductStandardCost] )
