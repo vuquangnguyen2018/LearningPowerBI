@@ -41,3 +41,6 @@ ExtractedText = SUBSTITUE(FactInternetSales[SalesOrderNumber],"SO","Sale Order: 
 ExtractedText = REPLACE(FactInternetSales[SalesOrderNumber],1,2,"Sale Order: ")
 
 
+* LOOKVALUE: Tìm kiếm và trả giá trị 
+
+Custom = LOOKUPVALUE(FactInternetSales[SalesTerritoryKey],FactInternetSales[SalesOrderNumber],"SO51900")
